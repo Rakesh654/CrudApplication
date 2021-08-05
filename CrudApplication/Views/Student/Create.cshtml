@@ -1,0 +1,28 @@
+﻿@model CrudApplication.Models.Student
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container">
+    <h1>Add Student</h1>
+    <form method="post" asp-action="Create" asp-controller="Student">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="Name"></label>
+            <input asp-for="Name" type="text" class="form-control" id="email">
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Age"></label>
+            <input asp-for="Age" type="number" class="form-control" id="age">
+            <span asp-validation-for="Age" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-success" value="Create">Submit</button>
+        <button class="btn btn-info" asp-action="Index">Back</button>
+    </form>
+</div>
+
+@section Scripts{
+
+@{<partial name="_ValidationScriptsPartial" />}
+ }

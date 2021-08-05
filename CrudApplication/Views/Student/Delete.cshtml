@@ -1,0 +1,21 @@
+﻿@model CrudApplication.Models.Student
+
+
+<div class="container">
+    <h1>Delete Student</h1>
+    <form method="post" asp-action="Delete" asp-route-Id="Id">
+        <input asp-for="Id" hidden />
+        <div class="form-group">
+            <label asp-for="Name"></label>
+            <input disabled asp-for="Name" type="text" class="form-control" id="Name">
+            <span asp-validation-for="Name"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Age"></label>
+            <input disabled asp-for="Age" type="number" class="form-control" id="Age">
+            <span asp-validation-for="Age"></span>
+        </div>
+        <button type="submit" class="btn btn-success" value="Delete">Submit</button>
+        <button class="btn btn-info" asp-action="Index">Back</button>
+    </form>
+</div>
